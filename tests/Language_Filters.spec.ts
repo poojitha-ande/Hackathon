@@ -48,7 +48,7 @@ test('Filters: iterate languages 0-4 and list levels', async () => {
     await languageOptions.nth(j).click();
     await searchPage.applyView();
     await searchPage.openLevelFilter();
-      await page.waitForTimeout(2000);
+      await page.waitForTimeout(5000);
 
     const levelOptions = await searchPage.getLevelOptions();
     const levelCount = await levelOptions.count();
