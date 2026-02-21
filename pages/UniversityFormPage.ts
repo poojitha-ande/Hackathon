@@ -7,6 +7,7 @@ export class UniversityFormPage {
  async fillForm() {
   const data = testData.universityForm;
 
+  // data-driven approach to fill the form
   await this.page.getByPlaceholder('First Name').fill(data.firstName);
   await this.page.getByPlaceholder('Last Name').fill(data.lastName);
   await this.page.getByPlaceholder('Work Email Address').fill(data.email);

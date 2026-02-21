@@ -61,4 +61,5 @@ test('@sanity Filters: iterate languages 0-4 and list levels', async () => {
     await searchPage.openLanguageFilter();
     await searchPage.clearFilters();
   }
+  
 });

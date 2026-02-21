@@ -1,7 +1,11 @@
 import { Page } from '@playwright/test';
 
 export class HomePage {
-  constructor(private page: Page) {}
+
+  constructor(
+    private page: Page) 
+    {
+  }
 
   async goto() {
     await this.page.goto("https://www.coursera.org/");
@@ -21,4 +25,5 @@ export class HomePage {
   async openForUniversities() {
     await this.page.locator('a', { hasText: "For Universities" }).click();
   }
+ 
 }

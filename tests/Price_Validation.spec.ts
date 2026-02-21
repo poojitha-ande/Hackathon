@@ -24,14 +24,15 @@ test.afterAll(async () => {
   Logger.log('Scenario finished4');
 });
 
-test('Plus: open and log pricing', async () => {
+test('Plus: openCourseraPlus ', async () => {
   await home.goto();
   await home.openCourseraPlus();
+
+});
+
+test('Plus1: validate pricing again', async () => {
   const prices = await plusPage.getPricing();
   prices.forEach(p => Logger.log(p ?? ''));
 });
 
-test('Plus: validate pricing again', async () => {
-  const prices = await plusPage.getPricing();
-  prices.forEach(p => Logger.log(p ?? ''));
-});
+
