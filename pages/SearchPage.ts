@@ -35,7 +35,8 @@ export class SearchPage {
     } 
     
     async filterByLevel(level: string) { 
-        await this.page.getByRole('button', { name: "Level" }).click(); 
+        // await this.page.getByRole('button', { name: "Level" }).click(); 
+        await this.page.locator("[data-testid='filter-dropdown-productDifficultyLevel']").click();
         await this.page.getByRole('checkbox', { name: level }).click(); 
         await this.page.getByRole('button', { name: "View" }).click(); 
     }

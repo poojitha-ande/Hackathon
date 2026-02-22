@@ -1,7 +1,7 @@
 {
   "universityForm": {
-    "firstName": "Priya",
-    "lastName": "Lingampelli",
+    "firstName": "Jitendra",
+    "lastName": "Gudela",
     "email": "asdfghj@gmail.com",
     "phone": "123456789",
     "institutionType": "University/4 Year College",
@@ -16,5 +16,10 @@
     "courseName": "Web development Courses",
     "language": "English",
     "level": "Beginner"
+  },
+  "pricing": {
+    "SingleProgram": "₹1,699",
+    "monthlyPrice": "₹2,099",
+    "annualPrice": "₹13,999"
   }
 }

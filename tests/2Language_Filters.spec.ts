@@ -1,57 +1,52 @@
-import { BrowserContext, Page } from '@playwright/test';
+import { expect } from '@playwright/test';
 import { test } from '../fixtures/test-fixture';
-import { HomePage } from '../pages/HomePage';
-import { SearchPage } from '../pages/SearchPage';
 import { Logger } from '../utils/logger';
-import testData from '../testdata/testdata.json';
 
-test.describe.configure({ mode: 'serial' });
+// test.describe.configure({ mode: 'serial' });
 
-let context: BrowserContext;
-let page: Page;
-let home: HomePage;
-let searchPage: SearchPage;
-
-test.beforeAll(async ({ browser }) => {
-  Logger.log('Scenario started2');
-  context = await browser.newContext();
-  page = await context.newPage();
-  home = new HomePage(page);
-  searchPage = new SearchPage(page);
+test.beforeAll(async () => {
+  Logger.log('Starting Test Suite 2 - Language Filter Tests');
 });
 
 test.afterAll(async () => {
-  await context.close();
-  Logger.log('Scenario finished2');
+  Logger.log('Completed Test Suite 2 - Language Filter Tests');
 });
 
-test('@sanity Filters: open and count languages', async () => {
-  await home.goto();
-  await home.searchCourse('Language Learning');
+test('@sanity Test 2.1 - Open Language Filter and Count Available Options', async ({ homePage, searchPage }) => {
+  await homePage.goto();
+  await homePage.searchCourse('Language Learning');
   await searchPage.openLanguageFilter();
   const languageOptions = await searchPage.getLanguageOptions();
   const count = await languageOptions.count();
   Logger.log(`Available language filters: ${count}`);
 });
 
+test('@sanity Test 2.2 - Iterate Through Languages and List Available Levels', async ({ page, homePage, searchPage }) => {
 
+  await homePage.goto();
+  await homePage.searchCourse('Language Learning');
+  await searchPage.openLanguageFilter();
 
-test('@sanity Filters: iterate languages 0-4 and list levels', async () => {
   const languageOptions = await searchPage.getLanguageOptions();
-  const count = await languageOptions.count();
-  Logger.log(`Available language filters: ${count}`);
 
+  const count = await languageOptions.count();
+  expect(count).toBeGreaterThan(0);
+  // expect(count).toBeGreaterThan(-1);
+
+  Logger.log(`Total available language filters found: ${count}`);
   const view = page.getByRole('button', { name: 'View' });
 
   for (let j = 0; j < 4; j++) {
-    Logger.log(`Filter ${j}: ${await languageOptions.nth(j).innerText()}`);
+    Logger.log(`Selecting Language Filter ${j + 1}: ${await languageOptions.nth(j).innerText()}`);
     await languageOptions.nth(j).click();
     await searchPage.applyView();
     await searchPage.openLevelFilter();
-      await page.waitForTimeout(5000);
+    await page.waitForTimeout(5000);
 
     const levelOptions = await searchPage.getLevelOptions();
     const levelCount = await levelOptions.count();
+    expect(levelCount).toBeGreaterThan(0);
+
     for (let k = 0; k < levelCount; k++) {
       const text = (await levelOptions.nth(k).textContent()) ?? '';
       Logger.log(text);
@@ -61,5 +56,5 @@ test('@sanity Filters: iterate languages 0-4 and list levels', async () => {
     await searchPage.openLanguageFilter();
     await searchPage.clearFilters();
   }
-  
 });
+

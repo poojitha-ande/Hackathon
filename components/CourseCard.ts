@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test';
 
 export class CourseCard {
-  constructor(private page: Page) {}
+  constructor(private page: Page) { }
 
   async getCourseDetails(index: number) {
     const name = await this.page.locator('//*[@class="cds-ProductCard-header"]//div[2]').nth(index).textContent();
