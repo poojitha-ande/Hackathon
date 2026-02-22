@@ -24,7 +24,7 @@ test('Test 4.2 - Validate Coursera Plus Pricing Options', async ({ homePage, cou
   await homePage.goto();
   await homePage.openCourseraPlus();
   const prices = await courseraPlusPage.getPricing();
-  prices.forEach(p => Logger.log(p ?? ''));
+  [2, 3, 4].forEach(i => Logger.log(prices[i] ?? ''));
 
   const { pricing } = testData;
   expect(prices[2]).toContain(pricing.SingleProgram);
