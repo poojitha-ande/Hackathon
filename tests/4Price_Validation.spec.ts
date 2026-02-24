@@ -24,12 +24,12 @@ test('Test 4.2 - Validate Coursera Plus Pricing Options', async ({ homePage, cou
   await homePage.goto();
   await homePage.openCourseraPlus();
   const prices = await courseraPlusPage.getPricing();
-  [2, 3, 4].forEach(i => Logger.log(prices[i] ?? ''));
+  [0, 1, 2].forEach(i => Logger.log(prices[i] ?? ''));
 
   const { pricing } = testData;
-  expect(prices[2]).toContain(pricing.SingleProgram);
-  expect(prices[3]).toContain(pricing.monthlyPrice);
-  expect(prices[4]).toContain(pricing.annualPrice);
+  expect(prices[0]).toContain(pricing.SingleProgram);
+  expect(prices[1]).toContain(pricing.monthlyPrice);
+  expect(prices[2]).toContain(pricing.annualPrice);
 
 });
 

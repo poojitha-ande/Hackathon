@@ -5,7 +5,6 @@ import { UniversityFormPage } from '../pages/UniversityFormPage';
 import { CourseraPlusPage } from '../pages/CourseraPlusPage';
 import { CourseCard } from '../components/CourseCard';
 
-// Define custom fixture types
 type CustomFixtures = {
   homePage: HomePage;
   searchPage: SearchPage;
@@ -15,13 +14,12 @@ type CustomFixtures = {
 };
 
 export const test = base.extend<CustomFixtures>({
-  // Auto-initialize HomePage
+
   homePage: async ({ page }, use) => {
     const homePage = new HomePage(page);
     await use(homePage);
   },
 
-  // Auto-initialize SearchPage
   searchPage: async ({ page }, use) => {
     const searchPage = new SearchPage(page);
     await use(searchPage);

@@ -1,4 +1,4 @@
-import { expect } from '@playwright/test';
+import { expect } from '../fixtures/test-fixture';
 import { test } from '../fixtures/test-fixture';
 import { Logger } from '../utils/logger';
 import testData from '../testdata/testdata.json';
