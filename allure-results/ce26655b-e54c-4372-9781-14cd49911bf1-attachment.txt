@@ -1,0 +1,26 @@
+[LOG]: Total available language filters found: 58
+[LOG]: Selecting Language Filter 1: English
+(8,578)
+[LOG]: Beginner(3,869)
+[LOG]: Intermediate(3,518)
+[LOG]: Advanced(378)
+[LOG]: Mixed(813)
+[LOG]: Selecting Language Filter 2: Spanish
+(4,295)
+[LOG]: Beginner(2,076)
+[LOG]: Intermediate(1,628)
+[LOG]: Advanced(162)
+[LOG]: Mixed(429)
+[LOG]: Selecting Language Filter 3: Kazakh
+(4,251)
+[LOG]: Beginner(1,869)
+[LOG]: Intermediate(1,742)
+[LOG]: Advanced(175)
+[LOG]: Mixed(465)
+[LOG]: Selecting Language Filter 4: French
+(4,186)
+[LOG]: Beginner(1,949)
+[LOG]: Intermediate(1,614)
+[LOG]: Advanced(161)
+[LOG]: Mixed(462)
+[LOG]: Completed Test Suite 2 - Language Filter Tests
