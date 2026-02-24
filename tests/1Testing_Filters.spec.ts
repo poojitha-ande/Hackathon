@@ -15,9 +15,6 @@ type CourseDetails = {
 
 test.beforeAll(async () => {
   Logger.log('Starting Test Suite 1 - Search and Filter Tests');
-
-  //  await homePage.goto();
-  // await homePage.searchCourse(testData.search.courseName);
 });
 
 test.afterAll(async () => {

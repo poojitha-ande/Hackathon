@@ -6,10 +6,6 @@ import { Logger } from '../utils/logger';
 
 test.beforeAll(async () => {
   Logger.log('Starting Test Suite 3 - University Form Handling Tests');
-
-  // await homePage.goto();
-  // await homePage.openForUniversities();
-
 });
 
 test.afterAll(async () => {
